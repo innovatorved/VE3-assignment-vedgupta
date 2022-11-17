@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { PageContext } from "../context/PagesStateManager";
 
 export default function BaseThree() {
-  return <div>BaseThree</div>;
+  const { moduleNumber, tab } = useContext(PageContext);
+
+  return <div>Hello</div>;
 }

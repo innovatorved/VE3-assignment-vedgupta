@@ -1,25 +1,17 @@
 import React, { useContext } from "react";
-import Module from "./Module";
+import ModuleButton from "./ModuleButton";
 
 import { PageContext } from "../context/PagesStateManager";
 
 export default function BaseTwo() {
-  const moduleNames = [
-    "Module One",
-    "Module Two",
-    "Module Three",
-    "Module Four",
-    "Module Five",
-  ];
-
-  const { setPage } = useContext(PageContext);
+  const { setPage, moduleNames, moduleNumber } = useContext(PageContext);
   return (
     <div className="base-two" style={{ display: "block" }}>
       <ul className="module-list">
         {moduleNames.map((value, key) => {
           return (
             <li key={key}>
-              <Module value={value} count={key + 1} />
+              <ModuleButton value={value} count={key + 1} />
             </li>
           );
         })}
@@ -29,7 +21,11 @@ export default function BaseTwo() {
         className="btn-module"
         id="selectModuleBtn"
         onClick={() => {
-          setPage("basetthree");
+          if (moduleNumber === 0) {
+            window.alert("Please select any Module..!");
+          } else {
+            setPage("basethree");
+          }
         }}
       >
         Select Module
