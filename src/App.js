@@ -1,5 +1,7 @@
+import Homepage from "./pages/Homepage";
+
 function App() {
-  return <div>Assignment</div>;
+  return <Homepage />;
 }
 
 export default App;
