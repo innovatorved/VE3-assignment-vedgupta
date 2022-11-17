@@ -9,7 +9,10 @@ import { PageContext } from "../context/PagesStateManager";
 export default function Homepage() {
   const { page } = useContext(PageContext);
   return (
-    <section id="module-container" className="">
+    <section
+      id="module-container"
+      className={`${page === "basethree" ? "tab-stage" : ""}`}
+    >
       <div className="container">
         <div className="row">
           <div className="intro-text-container">

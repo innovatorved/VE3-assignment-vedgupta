@@ -19,7 +19,7 @@ export default function BaseOne() {
           setPage("basetwo");
         }}
       >
-        Select Module
+        Enter
         <span className="right-arrow"></span>
       </button>
     </div>
