@@ -206,32 +206,32 @@ button:hover {
 }
 
 #module-container .intro-text-container .base-one h1 {
-  font-weight: 700;
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  margin-bottom: 1.7rem;
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  margin-bottom: 0.8rem;
   font-family: "Montserrat";
 }
 
 @media (max-width: 767px) {
   #module-container .intro-text-container .base-one h1 {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
-    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 0.95rem;
+    margin-bottom: 0.7rem;
   }
 }
 
 #module-container .intro-text-container .base-one p {
   font-weight: 400;
-  font-size: 0.8rem;
-  line-height: 1.31rem;
+  font-size: 0.65rem;
+  line-height: 1.1rem;
   font-family: "Montserrat";
 }
 
 @media (max-width: 767px) {
   #module-container .intro-text-container .base-one p {
-    font-size: 0.65rem;
-    line-height: 1rem;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
   }
 }
 
