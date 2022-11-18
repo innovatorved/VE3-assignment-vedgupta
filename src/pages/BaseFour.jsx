@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import { PageContext } from "../context/PagesStateManager";
 
-import MenuBotsWhite from "../images/menu-dots-white.png";
+import HomeLight from "../images/home-light.png";
 
 export default function BaseFour() {
   const { setPage } = useContext(PageContext);
@@ -22,7 +22,7 @@ export default function BaseFour() {
                     setPage("baseone");
                   }}
                 >
-                  <img src={MenuBotsWhite} alt="Home" />
+                  <img src={HomeLight} alt="Home" />
                 </button>
               </div>
             </div>

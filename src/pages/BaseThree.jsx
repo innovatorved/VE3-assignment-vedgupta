@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import SearchIcon from "../images/search-icon.png";
-import MenuDots from "../images/menu-dots.png";
+import HomeDark from "../images/home-dark.png";
 
 import TabButton from "../components/TabButton";
 import TabContent from "../components/TabContent";
@@ -33,7 +33,7 @@ export default function BaseThree() {
               setPage("baseone");
             }}
           >
-            <img src={MenuDots} alt="Home" />
+            <img src={HomeDark} alt="Home" />
           </button>
         </div>
       </div>
