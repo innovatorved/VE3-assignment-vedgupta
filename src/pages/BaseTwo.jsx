@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import ModuleButton from "./ModuleButton";
+import ModuleButton from "../components/ModuleButton";
 
 import { PageContext } from "../context/PagesStateManager";
 
 export default function BaseTwo() {
-  const { setPage, moduleNames, moduleNumber } = useContext(PageContext);
+  const { setPage, moduleNames, moduleNumber, setLoader } =
+    useContext(PageContext);
   return (
     <div className="base-two" style={{ display: "block" }}>
       <ul className="module-list">
@@ -24,7 +25,11 @@ export default function BaseTwo() {
           if (moduleNumber === 0) {
             window.alert("Please select any Module..!");
           } else {
+            setLoader(true);
             setPage("basethree");
+            setTimeout(() => {
+              setLoader(false);
+            }, 500);
           }
         }}
       >
