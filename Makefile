@@ -19,10 +19,5 @@ check: ## Run checks which needs to pass in the build
 fix: ## Run auto fixes for checks that fail
 	npx prettier --write .
 
-docker: ## build Docker image
-	@docker build . --tag rohitnishad/twm:frontend
-
 generate: ## Generate the frontend build
-	@cp src/environments/environment-prod.jsx src/environments/environment.jsx
 	@yarn build
-	@git restore .
