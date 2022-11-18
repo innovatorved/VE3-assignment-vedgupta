@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 // Createcontext
 const PageContext = createContext();
@@ -7,12 +7,20 @@ const PageState = (props) => {
   // Page State for going through 5 different page layout
   const [page, setPage] = useState("baseone");
 
-  // change background color for search page
-  if (page === "basefour") {
-    document.getElementById("root").style.background = "rgb(32, 93, 149)";
-  } else {
-    document.getElementById("root").style.background = "rgb(245, 245, 245)";
-  }
+  // useEffect for changing css if we change pages
+  useEffect(() => {
+    // Refresh previous select value for module if user come to page2 - basetwo
+    if (page === "basetwo") {
+      setModuleNumber(0);
+    }
+
+    // change background color for search page
+    if (page === "basefour") {
+      document.getElementById("root").style.background = "rgb(32, 93, 149)";
+    } else {
+      document.getElementById("root").style.background = "rgb(245, 245, 245)";
+    }
+  }, [page]);
 
   // tab for selecting 3rd Page tab State
   const [tab, setTab] = useState(1);
