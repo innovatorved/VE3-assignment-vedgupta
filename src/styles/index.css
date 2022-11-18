@@ -582,6 +582,51 @@ button:hover {
   float: left;
 }
 
+@media (max-width: 991px) {
+  .search-content {
+    margin: 10px;
+    padding-left: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+
+  .search-content .tab-content {
+    margin-bottom: 5px;
+  }
+}
+
+.search-content {
+  border-radius: 2px;
+  margin: 10px;
+  padding-left: 20px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  background-color: white;
+}
+
+.search-content .tab-content {
+  margin-bottom: 20px;
+}
+
+.search-content .tab-content:last-child {
+  margin-bottom: none;
+}
+
+.search-content h1 {
+  font-size: 20px;
+  color: #0d4f8c;
+}
+
+.search-content img {
+  width: 80%;
+}
+
+.search-content p {
+  font-size: 12px;
+  line-height: 18px;
+  color: #545454;
+}
+
 #module-container
   .intro-text-container
   .base-four
