@@ -8,7 +8,7 @@ import LeftButton from "../images/back-button.png";
 import RightButton from "../images/right-button.png";
 
 export default function BaseFour() {
-  const { setPage, ArrayForFilter } = useContext(PageContext);
+  const { setPage, ArrayForFilter, PAGES } = useContext(PageContext);
   const [search, setSearch] = useState("");
   const [filterArray, setFilterArray] = useState([]);
 
@@ -17,9 +17,12 @@ export default function BaseFour() {
 
   useEffect(() => {
     if (search === "") {
+      // if no value in search bar then return from useEfffect
       setCountResult(0);
       return;
     }
+
+    // Filter results for display
     let temp = ArrayForFilter.filter((item) => {
       return item["h"].toLowerCase().includes(search.toLowerCase());
     });
@@ -40,7 +43,7 @@ export default function BaseFour() {
                 <button
                   className="HomePage"
                   onClick={() => {
-                    setPage("baseone");
+                    setPage(PAGES.ONE);
                   }}
                 >
                   <img src={HomeLight} alt="Home" />
@@ -90,7 +93,7 @@ export default function BaseFour() {
                         />
                       );
                     }
-                    return <></>;
+                    return <div key={key}></div>;
                   })}
                 </>
               )}

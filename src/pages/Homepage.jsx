@@ -10,7 +10,25 @@ import Loader from "../components/Loader";
 import { PageContext } from "../context/PagesStateManager";
 
 export default function Homepage() {
-  const { page, loader } = useContext(PageContext);
+  const { page, loader, PAGES } = useContext(PageContext);
+
+  const SHOW_PAGE = (page) => {
+    /**
+     * @param page pagename you want to render like - (baseone , basetwo , ..)
+     */
+    if (page === PAGES.ONE) {
+      return <BaseOne />;
+    } else if (page === PAGES.TWO) {
+      return <BaseTwo />;
+    } else if (page === PAGES.THREE) {
+      return <BaseThree />;
+    } else if (page === PAGES.FOUR) {
+      return <BaseFour />;
+    } else {
+      return <BaseOne />;
+    }
+  };
+
   return (
     <>
       <section
@@ -24,12 +42,7 @@ export default function Homepage() {
       >
         <div className="container">
           <div className="row">
-            <div className="intro-text-container">
-              {page === "baseone" ? <BaseOne /> : <></>}
-              {page === "basetwo" ? <BaseTwo /> : <></>}
-              {page === "basethree" ? <BaseThree /> : <></>}
-              {page === "basefour" ? <BaseFour /> : <></>}
-            </div>
+            <div className="intro-text-container">{SHOW_PAGE(page)}</div>
             <div className="clearfix"></div>
           </div>
         </div>

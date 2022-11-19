@@ -7,6 +7,13 @@ const PageState = (props) => {
   // Page State for going through 5 different page layout
   const [page, setPage] = useState("baseone");
 
+  const PAGES = {
+    ONE: "baseone",
+    TWO: "basetwo",
+    THREE: "basethree",
+    FOUR: "basefour",
+  };
+
   // useEffect for changing css if we change pages
   useEffect(() => {
     // Refresh previous select value for module if user come to page2 - basetwo
@@ -39,6 +46,8 @@ const PageState = (props) => {
     "Module Four",
     "Module Five",
   ];
+  // Tab Namea
+  const tabNames = ["Tab 1", "Tab 2", "Tab 3"];
 
   // All the module information of Third Page
   const moduleInfo = {
@@ -138,8 +147,6 @@ const PageState = (props) => {
     });
   });
 
-  const tabNames = ["Tab 1", "Tab 2", "Tab 3"];
-
   return (
     <PageContext.Provider
       value={{
@@ -149,6 +156,7 @@ const PageState = (props) => {
         moduleNames,
         moduleInfo,
         page,
+        PAGES,
         setPage,
         tab,
         setTab,

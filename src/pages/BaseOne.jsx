@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { PageContext } from "../context/PagesStateManager";
 
 export default function BaseOne() {
-  const { setPage } = useContext(PageContext);
+  const { setPage, PAGES } = useContext(PageContext);
   return (
     <div className="base-one">
       <h1>Fusce sem magna pharetra cursus</h1>
@@ -19,7 +19,7 @@ export default function BaseOne() {
       <button
         className="btn-module base-one-btn"
         onClick={() => {
-          setPage("basetwo");
+          setPage(PAGES.TWO);
         }}
       >
         Enter

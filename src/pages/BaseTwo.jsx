@@ -4,7 +4,7 @@ import ModuleButton from "../components/ModuleButton";
 import { PageContext } from "../context/PagesStateManager";
 
 export default function BaseTwo() {
-  const { setPage, moduleNames, moduleNumber, setLoader } =
+  const { setPage, PAGES, moduleNames, moduleNumber, setLoader } =
     useContext(PageContext);
   return (
     <div className="base-two" style={{ display: "block" }}>
@@ -26,7 +26,7 @@ export default function BaseTwo() {
             window.alert("Please select any Module..!");
           } else {
             setLoader(true);
-            setPage("basethree");
+            setPage(PAGES.THREE);
             setTimeout(() => {
               setLoader(false);
             }, 500);

@@ -9,8 +9,15 @@ import TabContent from "../components/TabContent";
 import { PageContext } from "../context/PagesStateManager";
 
 export default function BaseThree() {
-  const { moduleNumber, moduleNames, moduleInfo, tab, tabNames, setPage } =
-    useContext(PageContext);
+  const {
+    moduleNumber,
+    moduleNames,
+    moduleInfo,
+    tab,
+    tabNames,
+    setPage,
+    PAGES,
+  } = useContext(PageContext);
 
   return (
     <div className="base-three" style={{ display: "block" }}>
@@ -22,7 +29,7 @@ export default function BaseThree() {
           <button
             className="searchIcon"
             onClick={() => {
-              setPage("basefour");
+              setPage(PAGES.FOUR);
             }}
           >
             <img src={SearchIcon} alt="Search Icon" />
@@ -30,7 +37,7 @@ export default function BaseThree() {
           <button
             className="HomePage"
             onClick={() => {
-              setPage("baseone");
+              setPage(PAGES.ONE);
             }}
           >
             <img src={HomeDark} alt="Home" />
