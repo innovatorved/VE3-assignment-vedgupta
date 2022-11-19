@@ -1,6 +1,6 @@
 # VE3 Assignment
 
-- It uses Reactjs to solve the Assignment
+-  I Use React JS
 
 ### Directory view
 
