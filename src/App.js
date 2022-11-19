@@ -1,7 +1,12 @@
 import Homepage from "./pages/Homepage";
+import PageState from "./context/PagesStateManager";
 
 function App() {
-  return <Homepage />;
+  return (
+    <PageState>
+      <Homepage />
+    </PageState>
+  );
 }
 
 export default App;
