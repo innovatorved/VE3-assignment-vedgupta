@@ -1,7 +1,12 @@
 {
-  "name": "ve3-assignment",
+  "name": "ve3-assignment-vedgupta",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innovatorved/VE3-assignment.git"
+  },
+  "homepage": "https://ve-3-assignment.vercel.app/",
   "author": "Ved Prakash Gupta <vedgupta0401@gmail.com>",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

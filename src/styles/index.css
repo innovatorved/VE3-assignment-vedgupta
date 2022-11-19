@@ -161,7 +161,6 @@ button:hover {
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
   left: 0px;
-  float: right;
   margin-top: 0.4rem;
 }
 
@@ -595,6 +594,16 @@ button:hover {
   }
 }
 
+.search-arrow-button {
+  display: flex;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.search-arrow-button img {
+  height: 24px;
+}
+
 .search-content {
   border-radius: 2px;
   margin: 10px;
@@ -605,7 +614,7 @@ button:hover {
 }
 
 .search-content .tab-content {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .search-content .tab-content:last-child {

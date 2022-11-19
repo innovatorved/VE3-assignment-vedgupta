@@ -4,32 +4,28 @@ import SearchContent from "../components/SearchContent";
 import { PageContext } from "../context/PagesStateManager";
 
 import HomeLight from "../images/home-light.png";
+import LeftButton from "../images/back-button.png";
+import RightButton from "../images/right-button.png";
 
 export default function BaseFour() {
-  const { setPage, moduleInfo } = useContext(PageContext);
+  const { setPage, ArrayForFilter } = useContext(PageContext);
   const [search, setSearch] = useState("");
   const [filterArray, setFilterArray] = useState([]);
 
   const [countResult, setCountResult] = useState(0);
+  const [pagecount, setpagecount] = useState(1);
 
   useEffect(() => {
     if (search === "") {
       setCountResult(0);
       return;
     }
-
-    let temparr = [];
-    Object.keys(moduleInfo).map((module, module_index) => {
-      Object.keys(moduleInfo[module]).map((tab, tab_index) => {
-        temparr.push(moduleInfo[module][tab]);
-      });
-    });
-    let temp = temparr.filter((item) => {
+    let temp = ArrayForFilter.filter((item) => {
       return item["h"].toLowerCase().includes(search.toLowerCase());
     });
     setCountResult(temp.length);
     setFilterArray(temp);
-  }, [search]);
+  }, [search, ArrayForFilter]);
 
   return (
     <div className="base-four" style={{ display: "block" }}>
@@ -84,18 +80,42 @@ export default function BaseFour() {
               ) : (
                 <>
                   {filterArray.map((item, key) => {
-                    return (
-                      <SearchContent
-                        key={key}
-                        h={item["h"]}
-                        p={item["p"]}
-                        img={item["img"]}
-                      />
-                    );
+                    if ((pagecount - 1) * 2 <= key && pagecount * 2 > key) {
+                      return (
+                        <SearchContent
+                          key={key}
+                          h={item["h"]}
+                          p={item["p"]}
+                          img={item["img"]}
+                        />
+                      );
+                    }
+                    return <></>;
                   })}
                 </>
               )}
+              <button className="search-arrow-button">
+                <img
+                  src={LeftButton}
+                  alt="left button"
+                  onClick={() => {
+                    if (pagecount > 1) {
+                      setpagecount(pagecount - 1);
+                    }
+                  }}
+                />
+                <img
+                  src={RightButton}
+                  alt="right button"
+                  onClick={() => {
+                    if (pagecount >= 1 && pagecount * 2 < countResult) {
+                      setpagecount(pagecount + 1);
+                    }
+                  }}
+                />
+              </button>
             </div>
+            <div></div>
           </div>
         </div>
       </div>

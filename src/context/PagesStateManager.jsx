@@ -129,6 +129,15 @@ const PageState = (props) => {
     },
   };
 
+  let ArrayForFilter = [];
+  // eslint-disable-next-line
+  Object.keys(moduleInfo).map((module, module_index) => {
+    // eslint-disable-next-line
+    Object.keys(moduleInfo[module]).map((tab, tab_index) => {
+      ArrayForFilter.push(moduleInfo[module][tab]);
+    });
+  });
+
   const tabNames = ["Tab 1", "Tab 2", "Tab 3"];
 
   return (
@@ -145,6 +154,7 @@ const PageState = (props) => {
         setTab,
         moduleNumber,
         setModuleNumber,
+        ArrayForFilter,
       }}
     >
       {props.children}
