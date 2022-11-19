@@ -23,7 +23,7 @@ export default function BaseThree() {
     <div className="base-three" style={{ display: "block" }}>
       <div className="topHeadMenu">
         <div className="topHeadLeft">
-          <h3 className="module-name">{moduleNames[moduleNumber - 1]}</h3>
+          <h3 className="module-name">{moduleNames[ moduleNumber - 1 ]}</h3>
         </div>
         <div className="topHeadRight">
           <button
@@ -37,6 +37,7 @@ export default function BaseThree() {
           <button
             className="HomePage"
             onClick={() => {
+              // Go to page one
               setPage(PAGES.ONE);
             }}
           >
@@ -52,13 +53,13 @@ export default function BaseThree() {
         </div>
       </nav>
       <TabContent
-        h={moduleInfo[moduleNames[moduleNumber - 1]][tabNames[tab - 1]]["h"]}
-        p={moduleInfo[moduleNames[moduleNumber - 1]][tabNames[tab - 1]]["p"]}
+        h={moduleInfo[ moduleNames[ moduleNumber - 1 ] ][ tabNames[ tab - 1 ] ][ "h" ]}
+        p={moduleInfo[ moduleNames[ moduleNumber - 1 ] ][ tabNames[ tab - 1 ] ][ "p" ]}
         img={
-          moduleInfo[moduleNames[moduleNumber - 1]][tabNames[tab - 1]]["img"]
+          moduleInfo[ moduleNames[ moduleNumber - 1 ] ][ tabNames[ tab - 1 ] ][ "img" ]
         }
         key={
-          moduleInfo[moduleNames[moduleNumber - 1]][tabNames[tab - 1]]["img"]
+          moduleInfo[ moduleNames[ moduleNumber - 1 ] ][ tabNames[ tab - 1 ] ][ "img" ]
         }
       />
     </div>

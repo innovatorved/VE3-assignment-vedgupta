@@ -19,6 +19,9 @@ export default function BaseOne() {
       <button
         className="btn-module base-one-btn"
         onClick={() => {
+          /**
+           * Go to second page
+           */
           setPage(PAGES.TWO);
         }}
       >

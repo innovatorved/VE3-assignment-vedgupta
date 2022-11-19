@@ -9,11 +9,11 @@ import RightButton from "../images/right-button.png";
 
 export default function BaseFour() {
   const { setPage, ArrayForFilter, PAGES } = useContext(PageContext);
-  const [search, setSearch] = useState("");
-  const [filterArray, setFilterArray] = useState([]);
+  const [ search, setSearch ] = useState("");
+  const [ filterArray, setFilterArray ] = useState([]);
 
-  const [countResult, setCountResult] = useState(0);
-  const [pagecount, setpagecount] = useState(1);
+  const [ countResult, setCountResult ] = useState(0);
+  const [ pagecount, setpagecount ] = useState(1);
 
   useEffect(() => {
     if (search === "") {
@@ -24,11 +24,11 @@ export default function BaseFour() {
 
     // Filter results for display
     let temp = ArrayForFilter.filter((item) => {
-      return item["h"].toLowerCase().includes(search.toLowerCase());
+      return item[ "h" ].toLowerCase().includes(search.toLowerCase());
     });
     setCountResult(temp.length);
     setFilterArray(temp);
-  }, [search, ArrayForFilter]);
+  }, [ search, ArrayForFilter ]);
 
   return (
     <div className="base-four" style={{ display: "block" }}>
@@ -43,6 +43,7 @@ export default function BaseFour() {
                 <button
                   className="HomePage"
                   onClick={() => {
+                    // Go to page one
                     setPage(PAGES.ONE);
                   }}
                 >
@@ -87,9 +88,9 @@ export default function BaseFour() {
                       return (
                         <SearchContent
                           key={key}
-                          h={item["h"]}
-                          p={item["p"]}
-                          img={item["img"]}
+                          h={item[ "h" ]}
+                          p={item[ "p" ]}
+                          img={item[ "img" ]}
                         />
                       );
                     }

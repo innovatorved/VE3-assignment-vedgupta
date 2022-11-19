@@ -22,6 +22,7 @@ export default function BaseTwo() {
         className="btn-module"
         id="selectModuleBtn"
         onClick={() => {
+          // Go two third  page
           if (moduleNumber === 0) {
             window.alert("Please select any Module..!");
           } else {
